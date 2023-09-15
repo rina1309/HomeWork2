@@ -1,0 +1,23 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: url(../src/img/image-1.jpeg);
+}
+.red {
+    width: 400px;
+    height: 400px;
+    background-color: red;
+    cursor: pointer;
+    box-shadow: 0 0 35px black;
+    border-radius: 20px;
+}
+.blue {
+    width: 400px;
+    height: 400px;
+    background-color: blue;
+    cursor: pointer;
+    box-shadow: 0 0 35px black;
+    border-radius: 20px;
+}
