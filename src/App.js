@@ -1,27 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
-class TwoBlocks extends React.Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      blocks: ['red', 'blue'],
-    }
-  }
-  changeBlock(i) {
-    const blocks = [...this.state.blocks];
-    blocks.reverse()
-    this.setState({ blocks })
-  }
+const TwoBlocks = ()=> {
+  const [blocks, setBlocks] = useState(["red", "blue"])
 
-  render(){
-    return(
-      <div className='container'>
-        <div className={this.state.blocks[0]} onClick={() => this.changeBlock(0)}></div>
-        <div className={this.state.blocks[1]} onClick={() => this.changeBlock(1)}></div>
-      </div>
-    )
+  function ChangeColor(){
+    const updatedBlocks = [...blocks];
+    updatedBlocks.reverse();
+    setBlocks(updatedBlocks);
   }
+  return (
+    <div className='container'>
+      <div className={blocks[0]} onClick={() => ChangeColor(0)}></div>
+      <div className={blocks[1]} onClick={() => ChangeColor(1)}></div>
+    </div>
+  );
 }
 
 export default TwoBlocks;
